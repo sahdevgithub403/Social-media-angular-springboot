@@ -1,0 +1,85 @@
+.create-post-wrapper {
+  margin-top: 50px;
+}
+
+.create-post-container {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e1e1e1;
+}
+
+.create-post-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1b;
+  margin-bottom: 15px;
+}
+
+.form-control,
+.custom-select {
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus,
+.custom-select:focus {
+  border-color: #0079d3;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 121, 211, 0.2);
+}
+
+.editor {
+  margin-top: 25px;
+  display: block;
+}
+
+
+
+.tox-tinymce {
+  border-radius: 8px !important;
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+  margin-top: 25px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnCreatePost {
+  background-color: #0079d3;
+  border: 1px solid #0079d3;
+  color: white;
+}
+
+.btnCreatePost:hover {
+  background-color: #005ea6;
+}
+
+.btnDiscard {
+  background-color: transparent;
+  border: 1px solid #0079d3;
+  color: #0079d3;
+}
+
+.btnDiscard:hover {
+  background-color: #f0f8ff;
+}

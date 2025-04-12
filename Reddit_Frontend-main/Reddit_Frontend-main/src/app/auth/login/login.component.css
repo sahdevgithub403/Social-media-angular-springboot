@@ -1,0 +1,59 @@
+
+.login-section{
+    margin: 100px;
+}
+
+.form-control{
+    padding: 10px;
+    border-radius: 60px;
+}
+
+::placeholder{
+    color: #000000;
+    opacity: 0.5; /* Firefox */
+}
+
+.card{
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.login-failed, .register-success{
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    border: 2px solid black;
+    width: 65%;    
+    background-color: red;
+    
+}
+
+.invalid-feedback {
+    min-height: 20px; 
+    font-size: 12px;
+    color: red;
+  }
+
+.login-failed-text, .register-success-text{
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;    
+    color: aliceblue;
+}
+
+.btn-block{
+    border-radius: 50px;
+    width: 100%;
+
+    &:hover{
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+    }
+}
+
+.toast-success {
+    z-index: 9999 !important;
+    opacity: 1 !important;
+    display: block !important;
+  }
+  

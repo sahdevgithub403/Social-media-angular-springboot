@@ -1,0 +1,59 @@
+<div class="profile-container">
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <div class="profile-image">
+      <img [src]="profilePhotoUrl || defaultPhoto" alt="Profile Photo" />
+      <label for="photoUpload" class="upload-btn">Change Photo</label>
+      <input type="file" id="photoUpload" hidden (change)="onPhotoSelected($event)" />
+    </div>
+
+    <div class="profile-info">
+      <h2>{{ name }}</h2>
+      <p><b>{{ postLength }}</b> Posts | <b>{{ commentLength }}</b> Comments</p>
+      <button (click)="toggleEdit()" class="edit-btn">Edit Profile</button>
+    </div>
+  </div>
+
+  <!-- Edit Section -->
+  <div *ngIf="editing" class="edit-section">
+    <input placeholder="Enter new username" />
+    <button (click)="saveChanges()">Save</button>
+    <button (click)="cancelEdit()">Cancel</button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button [class.active]="activeTab === 'overview'" (click)="activeTab = 'overview'">Overview</button>
+    <button [class.active]="activeTab === 'posts'" (click)="activeTab = 'posts'">Posts</button>
+    <button [class.active]="activeTab === 'comments'" (click)="activeTab = 'comments'">Comments</button>
+  </div>
+
+  <!-- Overview Tab -->
+  <div class="overview" *ngIf="activeTab === 'overview'">
+    <hr />
+    <button class="btnCreatePost" (click)="goToCreatePost()">
+      <fa-icon [icon]="faPlus" class="plus-icon"></fa-icon> Create Post
+    </button>
+  </div>
+
+  <!-- Posts Tab -->
+  <div *ngIf="activeTab === 'posts'">
+    <hr />
+    <h3>Your Posts:</h3>
+    <app-post-tile [posts]="posts" [showDelete]="true"></app-post-tile>
+  </div>
+
+  <!-- Comments Tab -->
+  <div *ngIf="activeTab === 'comments'">
+    <hr />
+    <h3>Your Comments:</h3>
+    <div *ngFor="let comment of comments" class="comment">
+      <div class="comment-header">
+        <a href="/user/{{ comment.username }}">{{ comment.username }}</a>
+        <span class="comment-time">{{ comment.duration }}</span>
+      </div>
+      <p>{{ comment.text }}</p>
+      <hr />
+    </div>
+  </div>
+</div>

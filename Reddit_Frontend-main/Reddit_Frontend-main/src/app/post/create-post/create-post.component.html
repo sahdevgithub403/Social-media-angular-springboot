@@ -1,0 +1,39 @@
+<div class="container create-post-wrapper">
+    <div class="row justify-content-center">
+      <div class="col-md-9">
+        <div class="create-post-container">
+          <form class="post-form" [formGroup]="createPostForm" method="post" (ngSubmit)="createPost()" enctype="multipart/form-data">
+            <div class="form-group">
+              <div class="create-post-heading">Create a Post</div>
+  
+              <select class="form-control custom-select" [formControlName]="'subredditName'">
+                <option value="" selected disabled>Select a Community</option>
+                <option *ngFor="let subreddit of subreddits" [value]="subreddit.name">
+                  {{ subreddit.name }}
+                </option>
+              </select>
+  
+              <input type="text" class="form-control" [formControlName]="'postName'" placeholder="Title" />
+              <input type="text" class="form-control" [formControlName]="'url'" placeholder="URL (optional)" />
+  
+              <editor class="editor" formControlName="description"
+                [init]="{
+                  menubar: false,
+                  height: 180,
+                  toolbar: 'bold italic underline link',
+                  plugins: ['link'],
+                  content_style: 'body { font-family:Arial; font-size:14px; }'
+                }">
+              </editor>
+  
+              <div class="form-actions">
+                <button type="button" class="btn btnDiscard" (click)="discardPost()">Discard</button>
+                <button type="submit" class="btn btnCreatePost">Post</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

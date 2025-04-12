@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4" style="width: 400px;">
+        <div class="card-header text-center bg-primary text-white">
+            <h4>Register</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="signUpForm"(ngSubmit)="signup()">
+                <!-- Email Field -->
+                <div class="mb-3">
+                    <label for="email_address" class="form-label">E-Mail Address</label>
+                    <input type="email" id="email_address" class="form-control"
+                        [class.is-invalid]="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched"
+                        formControlName="email" required>
+                    <div class="invalid-feedback" style="min-height: 20px;">
+                        <span *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
+                            Please provide a valid email.
+                        </span>
+                    </div>  
+                </div>
+
+                <!-- Username Field -->
+                <div class="mb-3">
+                    <label for="username" class="form-label">User Name</label>
+                    <input type="text" id="username" class="form-control"
+                        [class.is-invalid]="signUpForm.get('username')?.invalid && signUpForm.get('username')?.touched"
+                        formControlName="username" required>
+                    <div class="invalid-feedback" style="min-height: 20px;">
+                        <span *ngIf="signUpForm.get('username')?.invalid && signUpForm.get('username')?.touched">
+                            Please provide a valid username.
+                        </span>
+                    </div>   
+                </div>
+
+                <!-- Password Field -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-control"
+                        [class.is-invalid]="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched"
+                        formControlName="password" required>
+                    <div class="invalid-feedback" style="min-height: 20px;">
+                        <span *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
+                            Please provide a valid password.
+                        </span>
+                    </div>  
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100" [disabled]="signUpForm.invalid">Sign Up</button>
+            </form>
+        </div>
+        <div class="text-center mt-3">
+            <small>Existing user? <a href="/login" class="text-primary">Log In</a></small>
+        </div>
+    </div>
+</div>

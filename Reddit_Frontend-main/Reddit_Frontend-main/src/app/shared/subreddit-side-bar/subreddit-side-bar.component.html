@@ -1,0 +1,13 @@
+<div class="sidebar-view-subreddit">
+    <div class="sidebar-header">Popular Communities</div>
+    <hr />
+    <div class="subreddit-list">
+      <span *ngFor="let subreddit of subreddits" class="subreddit-item">
+        <a [href]="'/view-subreddit/' + subreddit.id">r/{{ subreddit.name }}</a>
+      </span>
+    </div>
+    <div class="view-all" *ngIf="displayViewAll">
+      <a href="/list-subreddits">See More</a>
+    </div>
+  </div>
+  

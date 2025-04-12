@@ -1,0 +1,37 @@
+<div class="container create-subreddit-wrapper">
+  <div class="row justify-content-center">
+    <!-- Create Subreddit Form -->
+    <div class="col-md-9">
+      <div class="create-subreddit-container">
+        <form [formGroup]="createSubredditForm" (ngSubmit)="createSubreddit()">
+          <div class="form-group">
+            <div class="create-subreddit-heading">Create a Community</div>
+            <p class="subreddit-subheading">Name your subreddit and describe it</p>
+            <hr />
+
+            <input type="text" formControlName="title" class="form-control" placeholder="Community Name (e.g. r/SubNexus)" />
+
+            <textarea formControlName="description" class="form-control" rows="4" placeholder="What is this community about?"></textarea>
+
+            <div class="form-buttons">
+              <button type="button" (click)="discard()" class="btn btnDiscard">Discard</button>
+              <button type="submit" class="btn btnCreateSubreddit">Create</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-md-3">
+      <div class="sidebar-guidelines">
+        <h5 class="guidelines-title">Posting Guidelines</h5>
+        <ul class="guideline-list">
+          <li>🧑‍🤝‍🧑 Remember the human</li>
+          <li>🤝 Behave like you would in real life</li>
+          <li>🚫 Don’t spam</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

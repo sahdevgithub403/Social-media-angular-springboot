@@ -1,0 +1,38 @@
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .vote-box {
+    background: #f0f2f5;
+    color: #444;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    transition: 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .vote-box fa-icon {
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+    transition: color 0.2s;
+  }
+  
+  .vote-box .active-up {
+     
+    color: #00b652;
+  }
+  
+  .vote-box .active-down {
+    color: #ff4500;
+  }
+  
+  .vote-box fa-icon:hover {
+    opacity: 0.8;
+  }
+  

@@ -1,0 +1,67 @@
+/* Form ko center aur responsive banane ke liye */
+.register-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Card styling */
+.card {
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields ke neeche jagah fix karne ke liye */
+.invalid-feedback {
+  min-height: 20px; /* Yeh height fix rakhega, form ka size nahi badlega */
+  font-size: 12px;
+  color: red;
+}
+
+/* Sign Up Button */
+.sign-up {
+  background-color: #edf2f7;
+  border: 1px solid #0079d3;
+  color: #0079d3;
+  border-radius: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.sign-up:hover {
+  background-color: #0079d3;
+  color: white;
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
+.form-control{
+  padding: 10px;
+  border-radius: 60px;
+}
+
+.btn{
+  border-radius: 50px;
+  width: 100%;
+
+  &:hover{
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+  }
+}
+
+/* Input focus effect */
+.form-control:focus {
+  border-color: #0079d3;
+  box-shadow: 0 0 5px rgba(0, 121, 211, 0.5);
+}
+

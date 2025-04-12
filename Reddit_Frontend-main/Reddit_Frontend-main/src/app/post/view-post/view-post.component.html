@@ -1,0 +1,63 @@
+<div class="container-fluid d-flex justify-content-center mt-4">
+  <div class="post-wrapper w-100" style="max-width: 960px;">
+    <div class="post-container p-4 bg-white shadow-sm rounded">
+      <!-- Subreddit + Posted by -->
+      <div class="post-meta mb-2">
+        <a class="subreddit-link" href="/r/{{post?.subredditName}}">r/{{post?.subredditName}}</a>
+        • Posted {{post?.duration}} by
+        <a class="username-link" href="/user/{{post?.userName}}">{{post?.userName}}</a>
+      </div>
+      <hr class="post-divider">
+
+      <!-- Post Title -->
+      <a [href]="post?.url" class="post-title">{{post?.postName}}</a>
+
+      <!-- Post Description -->
+      <div class="post-description mt-3" [innerHtml]="post?.description"></div>
+
+      <!-- Actions: Vote + Comments -->
+      <div class="post-actions d-flex align-items-center">
+        <app-vote-button *ngIf="post" [post]="post"></app-vote-button>
+
+        <a class="btn-comments ms-3" role="button">
+          <fa-icon [icon]="faComments"></fa-icon>
+          {{ post?.commentCount || 0 }} Comments
+        </a>
+      </div>
+    </div>
+
+    <!-- Comment Form -->
+    <div class="comment-form mt-5">
+      <form [formGroup]="commentForm" (ngSubmit)="postComment()">
+        <div class="form-group">
+          <textarea class="form-control comment-textarea" formControlName="text"
+            placeholder="What are your thoughts?"></textarea>
+          <div
+            *ngIf="commentForm.get('text')?.invalid && (commentForm.get('text')?.touched || commentForm.get('text')?.dirty)"
+            class="text-danger mt-1">
+            Comment is required
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary float-end mt-2" [disabled]="commentForm.invalid">Comment</button>
+      </form>
+    </div>
+
+    <!-- Comments -->
+    <div class="comments-section mt-5">
+      <div *ngFor="let comment of comments" class="comment-container d-flex">
+        <div class="comment-border me-2"></div>
+        <div class="comment-content flex-grow-1">
+          <div class="comment-meta mb-1">
+            <a href="/user/{{comment.username}}" class="comment-author">{{comment.username}}</a>
+            <span class="comment-dot">•</span>
+            <span class="comment-time">{{comment.duration}}</span>
+          </div>
+          <div class="comment-text">
+            {{ comment.text }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

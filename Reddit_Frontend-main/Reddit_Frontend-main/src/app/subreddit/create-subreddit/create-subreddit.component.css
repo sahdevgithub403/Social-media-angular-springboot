@@ -1,0 +1,119 @@
+body{
+  overflow: none;
+}
+
+.create-subreddit-wrapper {
+  margin-top: 100px;
+}
+
+/* Form Container */
+.create-subreddit-container {
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+}
+
+/* Headings */
+.create-subreddit-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1b;
+  margin-bottom: 5px;
+}
+
+.subreddit-subheading {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* Inputs & Textarea */
+.form-control {
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #0079d3;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 121, 211, 0.2);
+}
+
+/* Buttons */
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+  text-transform: uppercase;
+  padding: 8px 24px;
+  transition: all 0.2s ease-in-out;
+  width: 180px;
+}
+
+.btnCreateSubreddit {
+  background-color: #0079d3;
+  color: #ffffff;
+  border: 1px solid #0079d3;
+}
+
+.btnCreateSubreddit:hover {
+  background-color: #005ea6;
+}
+
+.btnDiscard {
+  background-color: transparent;
+  color: #0079d3;
+  border: 1px solid #0079d3;
+}
+
+.btnDiscard:hover {
+  background-color: #f0f8ff;
+}
+
+/* Sidebar */
+.sidebar-guidelines {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 100px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.guidelines-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1b;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.guideline-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.guideline-list li {
+  font-size: 14px;
+  color: #555;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.guideline-list li:last-child {
+  border-bottom: none;
+}

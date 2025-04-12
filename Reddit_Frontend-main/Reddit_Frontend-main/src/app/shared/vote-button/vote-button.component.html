@@ -1,0 +1,5 @@
+<div class="vote-box">
+  <fa-icon [icon]="faArrowUp" (click)="upvotePost()" [ngClass]="{ 'active-up': post.upVote }"></fa-icon>
+  <span>{{ post.voteCount }}</span>
+  <fa-icon [icon]="faArrowDown" (click)="downvotePost()" [ngClass]="{ 'active-down': post.downVote }"></fa-icon>
+</div>
